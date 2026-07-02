@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalmaru Haven — Tools</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-apple-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Kalmaru">
+<meta name="theme-color" content="#F5F1E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F2A4D;
+    --tan:#C2A582;
+    --sage:#E8EDD8;
+    --cream:#F5F1E8;
+    --white:#FFFFFF;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+  html,body{
+    margin:0; padding:0; min-height:100%;
+    font-family:'Jost', sans-serif;
+    color: var(--navy);
+  }
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding: 56px 22px 40px;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(194,165,130,0.14), transparent 42%),
+      radial-gradient(circle at 85% 92%, rgba(232,237,216,0.9), transparent 48%),
+      #FCFBF8;
+  }
+
+  .logo{
+    width: 220px;
+    display:block;
+  }
+  .logo svg{ width:100%; height:auto; display:block; }
+
+  .tagline{
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    font-size: 11.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--tan);
+    text-align:center;
+    margin: 20px 0 40px;
+  }
+
+  .panel{
+    width:100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tool{
+    display:flex;
+    align-items:center;
+    gap: 16px;
+    width:100%;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid rgba(31,42,77,0.06);
+    border-radius: 16px;
+    text-decoration:none;
+    color: var(--navy);
+    box-shadow: 0 1px 2px rgba(31,42,77,0.04);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .tool:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -16px rgba(31,42,77,0.22);
+    border-color: rgba(194,165,130,0.35);
+  }
+  .tool:active{
+    transform: translateY(0);
+    background: var(--sage);
+  }
+  .tool:focus-visible{
+    outline: 2px solid var(--tan);
+    outline-offset: 2px;
+  }
+
+  .tool-icon{
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: var(--sage);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .tool-icon svg{
+    width: 20px;
+    height: 20px;
+    stroke: var(--navy);
+    fill: none;
+  }
+
+  .tool-text{ flex:1 1 auto; min-width:0; }
+  .tool-name{
+    font-family:'Jost', sans-serif;
+    font-weight:500;
+    font-size: 15px;
+    color: var(--navy);
+    margin:0;
+  }
+  .tool-desc{
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    font-size: 12.5px;
+    color: rgba(31,42,77,0.5);
+    margin: 3px 0 0;
+  }
+
+  .tool-arrow{
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    stroke: var(--tan);
+    fill: none;
+    opacity: 0.85;
+  }
+
+  footer{
+    margin-top: 40px;
+    font-family:'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(31,42,77,0.32);
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .logo, .tagline, .panel > *{ animation: rise 0.6s ease both; }
+    .tagline{ animation-delay: 0.05s; }
+    .panel > *:nth-child(1){ animation-delay: 0.12s; }
+    .panel > *:nth-child(2){ animation-delay: 0.19s; }
+    .panel > *:nth-child(3){ animation-delay: 0.26s; }
+    @keyframes rise{
+      from{ opacity:0; transform: translateY(8px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="logo" aria-label="Kalmaru Haven">
+    <svg xmlns="http://www.w3.org/2000/svg" width="2159.000000pt" height="2159.000000pt" viewBox="0 0 2159.000000 2159.000000">
+    <g transform="translate(0.000000,2159.000000) scale(0.100000,-0.100000)"
+    fill="#1F2A4D" stroke="none">
+    <path d="M6490 17765 l0 -755 279 0 c207 0 299 4 358 15 410 78 740 384 843
+    784 32 122 39 211 40 469 l0 242 -760 0 -760 0 0 -755z M9726 18404 c-579
+    -1174 -1744 -1926 -3053 -1971 l-183 -6 0 -349 0 -348 1363 0 c1356 0 1538 4
+    1752 36 306 45 669 160 866 272 551 316 783 958 574 1589 -171 515 -624 864
+    -1155 890 l-105 5 -59 -118z M12696 18478 c-68 -523 -165 -851 -378 -1270
+    -524 -1034 -1516 -1748 -2658 -1912 -227 -33 -389 -36 -1777 -36 l-1393 0 0
+    -430 0 -430 2453 3 2452 3 155 22 c652 94 1221 305 1737 645 1116 735 1810
+    1960 1860 3285 l6 162 -1226 0 -1226 0 -5 -42z M6490 13545 l0 -434 1498 -4
+    c1618 -4 1540 -1 1837 -57 1503 -285 2672 -1540 2860 -3070 8 -68 15 -126 15
+    -127 0 -2 552 -3 1227 -3 l1226 0 -6 168 c-78 2008 -1609 3675 -3607 3926
+    -262 33 -458 36 -2752 36 l-2298 0 0 -435z M6490 12292 l0 -349 208 -6 c1276
+    -37 2463 -808 3027 -1966 l60 -123 96 6 c864 55 1437 901 1183 1746 -166 553
+    -644 879 -1479 1012 -139 22 -147 22 -1617 25 l-1478 4 0 -349z M6490 10610
+    l0 -760 760 0 760 0 0 238 c0 130 -5 278 -11 327 -53 435 -354 789 -772 909
+    -128 37 -224 46 -494 46 l-243 0 0 -760z"/>
+    </g>
+    <g transform="translate(0.000000,2159.000000) scale(0.100000,-0.100000)"
+    fill="#C2A582" stroke="none">
+    <path d="M6485 18518 c-3 -7 -4 -350 -3 -763 l3 -750 270 0 270 0 -267 2 -268
+    3 0 755 0 755 763 3 762 2 -763 3 c-603 1 -764 -1 -767 -10z M9808 18523 c18
+    -2 45 -2 60 0 15 2 0 4 -33 4 -33 0 -45 -2 -27 -4z M12693 18515 c-3 -9 -3
+    -19 1 -22 3 -4 6 1 6 10 0 16 88 17 1225 17 l1224 0 4 -57 4 -58 -1 60 -1 60
+    -1228 3 c-1100 2 -1228 0 -1234 -13z M15142 18250 c0 -19 2 -27 5 -17 2 9 2
+    25 0 35 -3 9 -5 1 -5 -18z M11124 17170 c0 -58 1 -81 3 -52 2 28 2 76 0 105
+    -2 28 -3 5 -3 -53z M6668 16433 c17 -2 47 -2 65 0 17 2 3 4 -33 4 -36 0 -50
+    -2 -32 -4z M6485 16085 c0 -192 1 -270 2 -172 2 98 2 256 0 350 -1 95 -3 15
+    -2 -178z M9303 15733 c15 -2 37 -2 50 0 12 2 0 4 -28 4 -27 0 -38 -2 -22 -4z
+    M13940 15603 l-85 -88 88 85 c81 79 92 90 84 90 -1 0 -41 -39 -87 -87z M6485
+    15258 c-3 -7 -4 -204 -3 -438 l3 -425 2358 0 2357 0 -2355 2 -2355 3 0 430 0
+    430 1418 3 1417 2 -1418 3 c-1127 1 -1419 -1 -1422 -10z M11313 14403 c9 -2
+    25 -2 35 0 9 3 1 5 -18 5 -19 0 -27 -2 -17 -5z M11183 13973 c15 -2 39 -2 55
+    0 15 2 2 4 -28 4 -30 0 -43 -2 -27 -4z M6485 13540 c0 -239 1 -337 2 -217 2
+    119 2 315 0 435 -1 119 -2 21 -2 -218z M9303 13103 c15 -2 39 -2 55 0 15 2 2
+    4 -28 4 -30 0 -43 -2 -27 -4z M6485 12295 c0 -192 1 -270 2 -172 2 98 2 256 0
+    350 -1 95 -3 15 -2 -178z M9363 12633 c9 -2 25 -2 35 0 9 3 1 5 -18 5 -19 0
+    -27 -2 -17 -5z M11580 12147 c0 -1 35 -36 78 -77 l77 -75 -75 78 c-69 71 -80
+    82 -80 74z M6748 11933 c12 -2 32 -2 45 0 12 2 2 4 -23 4 -25 0 -35 -2 -22 -4z
+    M6485 10610 l0 -765 760 0 760 0 -757 2 -758 3 -3 763 -2 762 0 -765z M11124
+    11205 c0 -55 1 -76 3 -47 2 29 2 74 0 100 -2 26 -3 2 -3 -53z M9050 10905 c19
+    -19 36 -35 39 -35 3 0 -10 16 -29 35 -19 19 -36 35 -39 35 -3 0 10 -16 29 -35z
+    M15143 10125 c0 -22 2 -30 4 -17 2 12 2 30 0 40 -3 9 -5 -1 -4 -23z M15152
+    9908 l-2 -58 -1224 0 c-1158 0 -1225 1 -1230 18 -4 13 -4 13 -3 -3 2 -20 11
+    -20 1230 -23 1037 -2 1228 0 1233 12 3 7 3 35 1 62 l-3 49 -2 -57z M705 7968
+    c-3 -7 -4 -571 -3 -1253 l3 -1240 405 0 405 0 3 458 2 457 39 0 c103 0 285
+    -55 383 -116 250 -155 389 -393 405 -691 l6 -113 415 0 415 0 -6 98 c-26 463
+    -304 890 -725 1115 l-82 44 42 19 c426 191 768 713 768 1172 l0 62 -383 0
+    -384 0 -12 -97 c-52 -426 -376 -718 -818 -740 l-123 -6 0 421 0 422 -375 0
+    c-291 0 -377 -3 -380 -12z M4457 7948 c-8 -18 -254 -575 -547 -1238 -293 -663
+    -535 -1213 -537 -1222 -5 -17 18 -18 380 -18 l386 0 33 81 c18 45 65 159 103
+    253 l70 171 544 0 543 0 97 -240 c53 -132 100 -246 104 -253 12 -17 767 -18
+    767 0 0 14 -1078 2468 -1093 2486 -7 9 -104 12 -423 12 l-414 0 -13 -32z m789
+    -1510 c5 -17 -16 -18 -355 -18 -199 0 -361 2 -361 4 0 3 77 194 170 425 94
+    231 175 433 181 448 10 26 25 -7 185 -407 96 -239 177 -443 180 -452z M6740
+    6725 l0 -1255 948 2 947 3 0 300 0 300 -572 3 -573 2 0 950 0 950 -375 0 -375
+    0 0 -1255z M9010 6725 l0 -1255 365 0 365 0 2 722 3 722 340 -417 c314 -386
+    342 -417 370 -416 27 0 59 36 365 415 l335 415 3 -721 2 -720 378 2 377 3 0
+    1250 0 1250 -341 3 -340 2 -383 -465 c-211 -256 -388 -464 -393 -463 -5 2
+    -179 210 -387 463 l-377 460 -342 3 -342 2 0 -1255z M13353 7968 c-8 -10
+    -1077 -2425 -1100 -2486 -4 -10 74 -12 383 -10 l389 3 70 171 c38 94 85 208
+    103 253 l33 81 542 0 542 0 100 -253 101 -252 387 -3 c213 -1 387 0 387 3 0 3
+    -247 566 -549 1252 l-549 1248 -415 3 c-324 2 -416 -1 -424 -10z m607 -1102
+    l178 -446 -364 0 -364 0 13 33 c8 17 90 220 182 449 93 230 171 416 172 414 2
+    -2 84 -204 183 -450z M15620 6725 l0 -1255 378 2 377 3 3 489 2 489 113 -6
+    c279 -15 354 -101 637 -744 l103 -233 403 0 c222 0 404 3 404 6 0 14 -316 689
+    -361 770 -76 137 -144 222 -225 279 l-70 51 70 39 c508 285 410 1073 -161
+    1293 -171 66 -155 65 -950 69 l-723 4 0 -1256z m1131 751 c188 -34 265 -124
+    262 -306 -4 -207 -88 -260 -425 -268 l-208 -4 0 296 0 296 148 0 c81 -1 181
+    -7 223 -14z M18297 7973 c-11 -11 -8 -1401 3 -1512 54 -525 391 -873 955 -985
+    735 -146 1416 145 1610 686 71 199 70 185 70 1043 l0 770 -375 0 -375 0 -6
+    -690 c-5 -583 -8 -700 -21 -755 -66 -271 -210 -416 -445 -451 -272 -40 -502
+    81 -597 317 -59 146 -59 149 -63 897 l-4 687 -373 0 c-205 0 -376 -3 -379 -7z
+    M6652 3673 l3 -658 123 -3 122 -3 0 286 0 285 525 0 525 0 2 -282 3 -283 123
+    -3 122 -3 0 661 0 660 -125 0 -125 0 0 -280 0 -280 -525 0 -525 0 0 280 0 280
+    -125 0 -125 0 2 -657z M8785 3680 c-209 -358 -381 -655 -383 -660 -2 -6 48
+    -10 130 -10 l133 0 60 100 60 100 511 0 512 0 57 -100 56 -100 135 0 c74 0
+    134 2 134 4 0 2 -172 298 -383 657 l-383 654 -130 2 -129 3 -380 -650z m709
+    63 c108 -183 196 -335 196 -338 0 -3 -178 -5 -395 -5 -217 0 -395 3 -395 6 0
+    8 393 675 396 672 1 -2 90 -153 198 -335z M9942 4321 c2 -5 169 -302 373 -660
+    l369 -652 140 3 141 3 367 650 c202 358 367 653 367 658 1 4 -59 7 -132 7
+    l-134 0 -288 -517 c-159 -285 -296 -530 -305 -546 l-17 -28 -304 545 -304 545
+    -138 1 c-80 0 -137 -4 -135 -9z M11902 3673 l3 -658 683 -3 682 -2 0 95 0 95
+    -560 0 -560 0 0 190 0 190 410 0 410 0 0 95 0 95 -410 0 -410 0 0 190 0 190
+    560 0 560 0 0 90 0 90 -685 0 -685 0 2 -657z M13570 3670 l0 -661 123 3 122 3
+    5 531 5 532 505 -532 505 -531 158 -3 157 -3 0 661 0 660 -125 0 -125 0 -2
+    -530 -3 -531 -504 531 -503 530 -159 0 -159 0 0 -660z"/>
+    </g>
+    </svg>
+  </div>
+
+  <p class="tagline">Property Tools</p>
+
+  <nav class="panel" aria-label="Kalmaru Haven tools">
+
+    <a class="tool" href="https://script.google.com/macros/s/AKfycbypzj_Q8IgprUDdo_PbsRQnwFdWZwpd98CEsBx6-UCp62J9ULQAnNbqtsa28vS88k8O/exec" target="_blank" rel="noopener">
+      <span class="tool-icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 9l7-7 7 7"/><rect x="4" y="11" width="16" height="10" rx="2"/></svg>
+      </span>
+      <span class="tool-text">
+        <p class="tool-name">Staff Dashboard</p>
+        <p class="tool-desc">Room status &amp; daily view</p>
+      </span>
+      <svg class="tool-arrow" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+    <a class="tool" href="https://tawing101.github.io/mytools/index.html" target="_blank" rel="noopener">
+      <span class="tool-icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 010 18"/><path d="M12 3a15 15 0 000 18"/><path d="M3 12h18"/></svg>
+      </span>
+      <span class="tool-text">
+        <p class="tool-name">More Tools</p>
+        <p class="tool-desc">Siargao Station &amp; utilities</p>
+      </span>
+      <svg class="tool-arrow" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+  </nav>
+
+  <footer>Kalmaru Haven · Siargao Island</footer>
+
+</body>
+</html>
