@@ -1,0 +1,13 @@
+{
+  "name": "Kalmaru Haven Tools",
+  "short_name": "Kalmaru",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FCFBF8",
+  "theme_color": "#F5F1E8",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
