@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalmaru Haven — Payment</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-apple-180.png">
+<meta name="theme-color" content="#F5F1E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F2A4D;
+    --tan:#C2A582;
+    --sage:#E8EDD8;
+    --white:#FFFFFF;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+  html,body{
+    margin:0; padding:0; min-height:100%;
+    font-family:'Jost', sans-serif;
+    color: var(--navy);
+  }
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding: 32px 20px 28px;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(194,165,130,0.14), transparent 42%),
+      radial-gradient(circle at 85% 92%, rgba(232,237,216,0.9), transparent 48%),
+      #FCFBF8;
+  }
+
+  .back{
+    align-self: flex-start;
+    display:flex;
+    align-items:center;
+    gap: 6px;
+    text-decoration:none;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    opacity: 0.65;
+    margin-bottom: 22px;
+    padding: 6px 4px;
+  }
+  .back svg{ width:16px; height:16px; stroke: var(--navy); }
+
+  .tagline{
+    font-weight:400;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--tan);
+    text-align:center;
+    margin: 0 0 22px;
+  }
+
+  .card{
+    width:100%;
+    max-width: 360px;
+    background: var(--white);
+    border: 1px solid rgba(31,42,77,0.06);
+    border-radius: 20px;
+    padding: 22px 22px 24px;
+    box-shadow: 0 18px 40px -24px rgba(31,42,77,0.28);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .qr-img{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    display:block;
+  }
+
+  .note{
+    margin-top: 18px;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: rgba(31,42,77,0.55);
+    text-align:center;
+    line-height: 1.5;
+  }
+
+  .whatsapp{
+    margin-top: 22px;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: var(--sage);
+    border-radius: 999px;
+    text-decoration:none;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .whatsapp svg{ width:16px; height:16px; stroke: var(--navy); }
+
+  footer{
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(31,42,77,0.32);
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .card{ animation: rise 0.5s ease both; }
+    @keyframes rise{
+      from{ opacity:0; transform: translateY(8px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+  <a class="back" href="./index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    Tools
+  </a>
+
+  <p class="tagline">Send Payment</p>
+
+  <div class="card">
+    <img class="qr-img" src="payment-qr.jpg" alt="Kalmaru Haven Siargao PNB InstaPay QR code, account ending 1491">
+    <p class="note">Scan with any InstaPay-enabled banking or e-wallet app.<br>Transfer fees may apply.</p>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/639686701453" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+    Send proof on WhatsApp
+  </a>
+
+  <footer>Kalmaru Haven · Siargao Island</footer>
+
+</body>
+</html>
